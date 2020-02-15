@@ -6,10 +6,10 @@
 //  Copyright © 2018 Zachary Simone. All rights reserved.
 //
 
-import Cocoa
 import AudioToolbox
+import Cocoa
 
-class ViewController: NSViewController {
+final class ViewController: NSViewController {
     
     @IBOutlet weak var inputLabelText: NSTextField!
     @IBOutlet weak var volumeSlider: NSSlider!
@@ -21,7 +21,7 @@ class ViewController: NSViewController {
         get { return volume ?? 0 }
         set {
             guard let value = newValue else { return }
-            AS.setVolume(to: value)
+            AppleScriptController.setVolume(to: value)
             inputLabelText.stringValue = "Current input volume: \(value)%"
             volume = value
             muteButton.title = value == 0 ? "Unmute" : "Mute"
@@ -30,14 +30,8 @@ class ViewController: NSViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
     override func viewDidAppear() {
-        AS.getResponse(command: "input volume of (get volume settings)", completion: { volume in
+        AppleScriptController.getResponse(command: "input volume of (get volume settings)", completion: { volume in
             if let v = Int(volume) {
                 currentVolume = v
                 inputLabelText.stringValue = "Current input volume: \(v)%"

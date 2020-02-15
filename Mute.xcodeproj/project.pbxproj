@@ -11,7 +11,7 @@
 		921CC89E20E0736A00B682EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921CC89D20E0736A00B682EF /* ViewController.swift */; };
 		921CC8A020E0736C00B682EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921CC89F20E0736C00B682EF /* Assets.xcassets */; };
 		921CC8A320E0736C00B682EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921CC8A120E0736C00B682EF /* Main.storyboard */; };
-		926CC1B220E63D5E000F8AED /* RunAppleScriptCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CC1B120E63D5E000F8AED /* RunAppleScriptCommand.swift */; };
+		926CC1B220E63D5E000F8AED /* AppleScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CC1B120E63D5E000F8AED /* AppleScriptController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		921CC8A220E0736C00B682EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		921CC8A420E0736C00B682EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		921CC8A520E0736C00B682EF /* Mute.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mute.entitlements; sourceTree = "<group>"; };
-		926CC1B120E63D5E000F8AED /* RunAppleScriptCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunAppleScriptCommand.swift; sourceTree = "<group>"; };
+		926CC1B120E63D5E000F8AED /* AppleScriptController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 			children = (
 				921CC89B20E0736A00B682EF /* AppDelegate.swift */,
 				921CC89D20E0736A00B682EF /* ViewController.swift */,
-				926CC1B120E63D5E000F8AED /* RunAppleScriptCommand.swift */,
+				926CC1B120E63D5E000F8AED /* AppleScriptController.swift */,
 				921CC89F20E0736C00B682EF /* Assets.xcassets */,
 				921CC8A120E0736C00B682EF /* Main.storyboard */,
 				921CC8A420E0736C00B682EF /* Info.plist */,
@@ -143,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				921CC89E20E0736A00B682EF /* ViewController.swift in Sources */,
-				926CC1B220E63D5E000F8AED /* RunAppleScriptCommand.swift in Sources */,
+				926CC1B220E63D5E000F8AED /* AppleScriptController.swift in Sources */,
 				921CC89C20E0736A00B682EF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
