@@ -1,0 +1,8 @@
+If you do anything with audio on your Mac, you'll know the need to quickly mute and un-mute any connected audio input device. 
+
+Mute is a simple software mute tool that you can leave running during these times - such as while recording a podcast - and use to quickly toggle the state or volume of audio input on your Mac.
+
+Features:
+* Quick mute/unmute. 
+* Adjust input volume (0-100%).
+* Dark mode support. 
