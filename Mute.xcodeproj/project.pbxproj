@@ -12,6 +12,7 @@
 		92FF705B23F895A5006BCB21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92FF705A23F895A5006BCB21 /* Assets.xcassets */; };
 		92FF705E23F895A5006BCB21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FF705C23F895A5006BCB21 /* Main.storyboard */; };
 		92FF706123F895A5006BCB21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF706023F895A5006BCB21 /* main.m */; };
+		92FF706C23F89AC2006BCB21 /* AppleScriptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF706B23F89AC2006BCB21 /* AppleScriptController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,8 @@
 		92FF705F23F895A5006BCB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92FF706023F895A5006BCB21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		92FF706223F895A5006BCB21 /* Mute.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mute.entitlements; sourceTree = "<group>"; };
+		92FF706A23F89AC2006BCB21 /* AppleScriptController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleScriptController.h; sourceTree = "<group>"; };
+		92FF706B23F89AC2006BCB21 /* AppleScriptController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppleScriptController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +60,10 @@
 		92FF705323F895A3006BCB21 /* Mute */ = {
 			isa = PBXGroup;
 			children = (
+				92FF706923F89A70006BCB21 /* Audio */,
+				92FF706823F89A6B006BCB21 /* UI */,
 				92FF705423F895A3006BCB21 /* AppDelegate.h */,
 				92FF705523F895A3006BCB21 /* AppDelegate.m */,
-				92FF705723F895A3006BCB21 /* MainViewController.h */,
-				92FF705823F895A3006BCB21 /* MainViewController.m */,
 				92FF705A23F895A5006BCB21 /* Assets.xcassets */,
 				92FF705C23F895A5006BCB21 /* Main.storyboard */,
 				92FF705F23F895A5006BCB21 /* Info.plist */,
@@ -68,6 +71,24 @@
 				92FF706223F895A5006BCB21 /* Mute.entitlements */,
 			);
 			path = Mute;
+			sourceTree = "<group>";
+		};
+		92FF706823F89A6B006BCB21 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				92FF705723F895A3006BCB21 /* MainViewController.h */,
+				92FF705823F895A3006BCB21 /* MainViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		92FF706923F89A70006BCB21 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				92FF706A23F89AC2006BCB21 /* AppleScriptController.h */,
+				92FF706B23F89AC2006BCB21 /* AppleScriptController.m */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92FF705923F895A3006BCB21 /* MainViewController.m in Sources */,
+				92FF706C23F89AC2006BCB21 /* AppleScriptController.m in Sources */,
 				92FF706123F895A5006BCB21 /* main.m in Sources */,
 				92FF705623F895A3006BCB21 /* AppDelegate.m in Sources */,
 			);
