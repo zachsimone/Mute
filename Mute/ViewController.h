@@ -10,6 +10,11 @@
 
 @interface ViewController : NSViewController
 
+@property (weak) IBOutlet NSTextField *currentInputVolumeTextField;
+@property (weak) IBOutlet NSSlider *currentVolumeSlider;
+@property (weak) IBOutlet NSButton *muteStateButton;
+
+@property (weak) IBOutlet NSPopUpButton *inputDeviceSelector;
 
 @end
 

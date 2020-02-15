@@ -70,8 +70,8 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Mute" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -92,19 +92,19 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="132"/>
+                    <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="275" height="209"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g0v-oq-Yv7">
-                                <rect key="frame" x="14" y="13" width="452" height="32"/>
+                                <rect key="frame" x="14" y="90" width="247" height="32"/>
                                 <buttonCell key="cell" type="push" title="Mute/Unmute" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mgb-CN-Jgs">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fvI-oL-Ubk">
-                                <rect key="frame" x="16" y="96" width="448" height="16"/>
+                                <rect key="frame" x="18" y="173" width="239" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Current input volume: x%" id="7WW-lT-mI6">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -112,27 +112,61 @@
                                 </textFieldCell>
                             </textField>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1WN-H7-nlT">
-                                <rect key="frame" x="18" y="59" width="444" height="19"/>
+                                <rect key="frame" x="18" y="136" width="239" height="19"/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="q2D-Df-Lmh"/>
                             </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ltm-1W-lph">
+                                <rect key="frame" x="18" y="57" width="239" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Current input device:" id="M27-WD-eye">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hPt-np-wzE">
+                                <rect key="frame" x="18" y="17" width="240" height="25"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="oLz-94-Gaj" id="PJg-7n-Fbi">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <menu key="menu" id="4kh-Kk-rMf">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="oLz-94-Gaj"/>
+                                            <menuItem title="Item 2" id="Vwt-oS-YFZ"/>
+                                            <menuItem title="Item 3" id="yKq-Kx-KKk"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                         <constraints>
                             <constraint firstItem="g0v-oq-Yv7" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="0Eg-cT-jwr"/>
+                            <constraint firstAttribute="trailing" secondItem="ltm-1W-lph" secondAttribute="trailing" constant="20" id="40A-FR-mjk"/>
                             <constraint firstItem="fvI-oL-Ubk" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="684-sl-V91"/>
                             <constraint firstAttribute="trailing" secondItem="fvI-oL-Ubk" secondAttribute="trailing" constant="20" id="B4U-gk-VWQ"/>
                             <constraint firstItem="g0v-oq-Yv7" firstAttribute="top" secondItem="1WN-H7-nlT" secondAttribute="bottom" constant="20" id="EM6-jx-x0h"/>
+                            <constraint firstItem="hPt-np-wzE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Gg5-ul-Wz3"/>
+                            <constraint firstAttribute="trailing" secondItem="hPt-np-wzE" secondAttribute="trailing" constant="20" id="Kfy-Fn-SGC"/>
+                            <constraint firstItem="ltm-1W-lph" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="PPb-PK-9lq"/>
                             <constraint firstItem="fvI-oL-Ubk" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Q8L-gO-Ed5"/>
-                            <constraint firstAttribute="bottom" secondItem="g0v-oq-Yv7" secondAttribute="bottom" constant="20" id="WiJ-nF-udG"/>
+                            <constraint firstItem="ltm-1W-lph" firstAttribute="top" secondItem="g0v-oq-Yv7" secondAttribute="bottom" constant="24" id="WZx-Ay-DrL"/>
+                            <constraint firstItem="hPt-np-wzE" firstAttribute="top" secondItem="ltm-1W-lph" secondAttribute="bottom" constant="16" id="cIm-5J-Zlt"/>
                             <constraint firstItem="1WN-H7-nlT" firstAttribute="top" secondItem="fvI-oL-Ubk" secondAttribute="bottom" constant="20" id="ceT-8R-CZ8"/>
                             <constraint firstItem="1WN-H7-nlT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ePr-5d-uCE"/>
                             <constraint firstAttribute="trailing" secondItem="g0v-oq-Yv7" secondAttribute="trailing" constant="20" id="fa3-Sj-uyS"/>
                             <constraint firstAttribute="trailing" secondItem="1WN-H7-nlT" secondAttribute="trailing" constant="20" id="kxh-TP-4kl"/>
+                            <constraint firstAttribute="bottom" secondItem="hPt-np-wzE" secondAttribute="bottom" constant="20" id="wpL-Nv-eB3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentInputVolumeTextField" destination="fvI-oL-Ubk" id="NkZ-4W-jtu"/>
+                        <outlet property="currentVolumeSlider" destination="1WN-H7-nlT" id="MJx-Ps-Bzz"/>
+                        <outlet property="inputDeviceSelector" destination="hPt-np-wzE" id="NnU-yJ-6Ju"/>
+                        <outlet property="muteStateButton" destination="g0v-oq-Yv7" id="6hX-hn-DVu"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-27.5" y="702"/>
         </scene>
     </scenes>
 </document>
