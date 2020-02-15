@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@interface MainViewController : NSViewController
 
 @property (weak) IBOutlet NSTextField *currentInputVolumeTextField;
 @property (weak) IBOutlet NSSlider *currentVolumeSlider;
