@@ -20,12 +20,12 @@
     [self runCommand:[[NSString alloc] initWithFormat:@"set volume input volume %@", volumeString]];
 }
 
--(void) getResponse:(NSString*)command :(void (^)(NSAppleEventDescriptor* response))completion {
+-(NSAppleEventDescriptor*) getResponse:(NSString*)command {
     NSDictionary *error = nil;
     NSAppleScript *script = [[NSAppleScript alloc] initWithSource:command];
     NSAppleEventDescriptor *result = [script executeAndReturnError:&error];
     NSLog(@"AppleScript command result: %@", result);
-    completion(result);
+    return result;
 }
 
 @end

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void) runCommand:(NSString*)command;
 -(void) setVolume:(int*)volume;
--(void) getResponse:(NSString*)command :(void (^)(NSAppleEventDescriptor* response))completion;
+-(NSAppleEventDescriptor*) getResponse:(NSString*)command;
 
 @end
 
