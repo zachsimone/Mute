@@ -11,6 +11,8 @@
 
 @implementation MainViewController
 
+/// A reference to the last non-zero volume value - informs what to return to when "unmute" is pressed
+NSInteger lastNonZeroValue;
 AppleScriptController *scriptController;
 
 - (void)viewDidLoad {
@@ -24,27 +26,49 @@ AppleScriptController *scriptController;
     
    //createInputDeviceArray();
     
-    [self setValues];
+    [self updateUI];
 }
 
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
+- (void)updateVolume:(NSInteger*)volume {
+    [scriptController setVolume:volume];
+    if (*volume > 0) {
+        lastNonZeroValue = *volume;
+    }
 }
 
-- (void)setValues {
-    UInt32 volume = [[scriptController getResponse:@"input volume of (get volume settings)"] int32Value];
+- (void)updateUI {
+    NSAppleEventDescriptor *volumeResponse = [scriptController getResponse:@"input volume of (get volume settings)"];
+    NSInteger volume = [volumeResponse int32Value];
     self.currentVolumeSlider.doubleValue = volume;
-    NSString *labelText = [NSString stringWithFormat:@"Current input volume %i%%", volume];
+    
+    if (volume > 0) {
+        [self.muteStateButton setTitle:@"Mute"];
+    } else {
+        [self.muteStateButton setTitle:@"Unmute"];
+    }
+    
+    NSString *labelText = [NSString stringWithFormat:@"Current input volume: %li%%", (long)volume];
     [self.currentInputVolumeTextField setStringValue:labelText];
 }
 
 - (IBAction)sliderValueChanged:(NSSliderCell *)sender {
-    int inputVolumeValue = sender.intValue;
-    [scriptController setVolume:&inputVolumeValue];
-    [self setValues];
+    NSInteger inputVolume = sender.doubleValue;
+    [self updateVolume:&inputVolume];
+    [self updateUI];
 }
 
+- (IBAction)muteButtonPressed:(NSButton *)sender {
+    NSAppleEventDescriptor *volumeResponse = [scriptController getResponse:@"input volume of (get volume settings)"];
+    NSInteger volume = [volumeResponse int32Value];
+    if (volume == 0) {
+        // Unmute
+        [self updateVolume:&lastNonZeroValue];
+    } else {
+        // Mute
+        NSInteger zero = 0;
+        [self updateVolume:&zero];
+    }
+    [self updateUI];
+}
 
 @end

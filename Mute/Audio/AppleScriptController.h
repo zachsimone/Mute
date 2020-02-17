@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AppleScriptController : NSObject
 
 -(void) runCommand:(NSString*)command;
--(void) setVolume:(int*)volume;
+-(void) setVolume:(NSInteger*)volume;
 -(NSAppleEventDescriptor*) getResponse:(NSString*)command;
 
 @end

@@ -15,8 +15,8 @@
     [script executeAndReturnError:nil]; // Not handling errors for now
 }
 
--(void) setVolume:(int*)volume {
-    NSString *volumeString = [NSString stringWithFormat:@"%d", *volume];
+-(void) setVolume:(NSInteger*)volume {
+    NSString *volumeString = [NSString stringWithFormat:@"%ld", (long)*volume];
     [self runCommand:[[NSString alloc] initWithFormat:@"set volume input volume %@", volumeString]];
 }
 
